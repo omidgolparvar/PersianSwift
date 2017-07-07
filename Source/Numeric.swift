@@ -16,12 +16,16 @@ extension Float		: Numeric {}
 
 public extension Numeric {
 	
-	var string: String {
+	var PS_string: String {
 		return String(describing: self)
 	}
 	
-	var stringWithPersianDigits: String {
-		return String(describing: self).withPersianDigits
+	var PS_stringWithPersianDigits: String {
+		return String(describing: self).PS_withPersianDigits
+	}
+	
+	var PS_stringWithCurrencyStyle: String {
+		return String(describing: self).PS_withCurrencyStyle!
 	}
 	
 }
