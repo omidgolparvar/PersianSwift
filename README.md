@@ -150,26 +150,25 @@ _ = date.PS_asFullPersianDateTime // شنبه ۱۸ آذر ماه ۱۳۶۸ ساع
   <ul><li>به ترتیب کردن آرایه‌ای از String و دریافت خروجی</li></ul>
 </div>
 
+  <div dir="rtl">
+  این دستور روی آرایه‌ای از `String` اعمال میشه و اون رو بطور صعودی به ترتیب میکنه و بعنوان خروجی برمیگردونه.
+  </div>
+
+  ```swift
+  [String].PS_sortedPersianStrings
+  ```
 <div dir="rtl">
-این دستور روی آرایه‌ای از `String` اعمال میشه و اون رو بطور صعودی به ترتیب میکنه و بعنوان خروجی برمیگردونه.
+  <ul><li>به ترتیب کردن درجای آرایه‌ای از String</li></ul>
 </div>
 
-```swift
-[String].PS_sortedPersianStrings
-```
-<div dir="rtl">
-  <ul>
-    <li>به ترتیب کردن درجای آرایه‌ای از String</li>
-  </ul>
-</div>
+  <div dir="rtl">
+  این دستور هم روی آرایه‌ای از `String` اعمال میشه و خود اون آرایه رو درجا به ترتیب میکنه. موقع استفاده از این دستور میتونین صعودی یا نزولی بودن ترتیب رو انتخاب کنین.
+  </div>
 
-<div dir="rtl">
-این دستور هم روی آرایه‌ای از `String` اعمال میشه و خود اون آرایه رو درجا به ترتیب میکنه. موقع استفاده از این دستور میتونین صعودی یا نزولی بودن ترتیب رو انتخاب کنین.
-</div>
+  ```swift
+  [String].PS_sortPersianStrings(desc: Bool)
+  ```
 
-```swift
-[String].PS_sortPersianStrings(desc: Bool)
-```
 
 
 
