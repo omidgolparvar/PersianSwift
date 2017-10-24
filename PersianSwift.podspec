@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name             = 'PersianSwift'
-	s.version          = '0.1'
+	s.version          = '1.5'
 	s.summary          = 'PersianSwift adds Persian to Swift!'
 
 	s.description      = 'Using PersianSwift helps us to reduce coding.'
