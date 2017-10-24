@@ -1,5 +1,5 @@
 //
-//  PS.swift
+//  ps.swift
 //  PersianSwift
 //
 //  Created by Omid Golparvar on 7/6/17.
@@ -7,6 +7,24 @@
 //
 
 import Foundation
+
+public protocol PersianSwiftCompatible {
+	associatedtype someType
+	var ps: someType { get }
+}
+
+public extension PersianSwiftCompatible {
+	public var ps: PersianSwiftHelper<Self> {
+		get { return PersianSwiftHelper(self) }
+	}
+}
+
+public struct PersianSwiftHelper<Base> {
+	var base: Base
+	init(_ base: Base) {
+		self.base = base
+	}
+}
 
 public class PersianSwift {
 	
@@ -37,11 +55,24 @@ public class PersianSwift {
 			
 			returnString = returnString.replacingOccurrences(of: ",", with: "،")
 			
+			returnString = returnString.replacingOccurrences(of: "٠", with: "۰")
+			returnString = returnString.replacingOccurrences(of: "١", with: "۱")
+			returnString = returnString.replacingOccurrences(of: "٢", with: "۲")
+			returnString = returnString.replacingOccurrences(of: "٣", with: "۳")
+			returnString = returnString.replacingOccurrences(of: "٤", with: "۴")
+			returnString = returnString.replacingOccurrences(of: "٥", with: "۵")
+			returnString = returnString.replacingOccurrences(of: "٦", with: "۶")
+			returnString = returnString.replacingOccurrences(of: "٧", with: "۷")
+			returnString = returnString.replacingOccurrences(of: "٨", with: "۸")
+			returnString = returnString.replacingOccurrences(of: "٩", with: "۹")
+			
 			return returnString
 		}
 		
 		static func StringWithEasternDigits(from string: String) -> String {
+			
 			var returnString: String = string
+			//Replace Persian Digits
 			returnString = returnString.replacingOccurrences(of: "۰", with: "0")
 			returnString = returnString.replacingOccurrences(of: "۱", with: "1")
 			returnString = returnString.replacingOccurrences(of: "۲", with: "2")
@@ -52,8 +83,20 @@ public class PersianSwift {
 			returnString = returnString.replacingOccurrences(of: "۷", with: "7")
 			returnString = returnString.replacingOccurrences(of: "۸", with: "8")
 			returnString = returnString.replacingOccurrences(of: "۹", with: "9")
-			
+			//Replace Persian Comma
 			returnString = returnString.replacingOccurrences(of: "،", with: ",")
+			
+			//Replace Arabic Digits
+			returnString = returnString.replacingOccurrences(of: "٠", with: "0")
+			returnString = returnString.replacingOccurrences(of: "١", with: "1")
+			returnString = returnString.replacingOccurrences(of: "٢", with: "2")
+			returnString = returnString.replacingOccurrences(of: "٣", with: "3")
+			returnString = returnString.replacingOccurrences(of: "٤", with: "4")
+			returnString = returnString.replacingOccurrences(of: "٥", with: "5")
+			returnString = returnString.replacingOccurrences(of: "٦", with: "6")
+			returnString = returnString.replacingOccurrences(of: "٧", with: "7")
+			returnString = returnString.replacingOccurrences(of: "٨", with: "8")
+			returnString = returnString.replacingOccurrences(of: "٩", with: "9")
 			
 			return returnString
 		}
@@ -66,12 +109,12 @@ public class PersianSwift {
 		}
 		
 		static func StringWithIranRialStyle(from string: String) -> String? {
-			guard let str = string.PS_withCurrencyStyle else { return nil }
+			guard let str = string.ps.withCurrencyStyle else { return nil }
 			return str + " ریال"
 		}
 		
 		static func StringWithIranTomanStyle(from string: String) -> String? {
-			guard let str = string.PS_withCurrencyStyle else { return nil }
+			guard let str = string.ps.withCurrencyStyle else { return nil }
 			return str + " تومان"
 		}
 		
@@ -84,7 +127,7 @@ public class PersianSwift {
 				let string = formatter.string(from: NSNumber(value: double))
 				else { return nil }
 			
-			return string.PS_withPersianDigits
+			return string.ps.withPersianDigits
 		}
 		
 		static func SortedPersianStringArray(from array: [String], desc: Bool = false) -> [String] {
@@ -160,28 +203,28 @@ public class PersianSwift {
 		var dateComponents: DateComponents	= DateComponents()
 		
 		public var year							: Int		{ return dateComponents.year! }
-		public var year_yyyy_withPersianDigits	: String	{ return year.PS_stringWithPersianDigits }
+		public var year_yyyy_withPersianDigits	: String	{ return year.ps.stringWithPersianDigits }
 		
 		public var month						: Int		{ return dateComponents.month! }
 		public var monthName					: String	{ return PersianDate.MonthSymbols[dateComponents.month!] }
-		public var month_m_withPersianDigits	: String	{ return month.PS_stringWithPersianDigits }
-		public var month_mm_withPersianDigits	: String	{ return month < 10 ? "۰\(month.PS_stringWithPersianDigits)" : month.PS_stringWithPersianDigits }
+		public var month_m_withPersianDigits	: String	{ return month.ps.stringWithPersianDigits }
+		public var month_mm_withPersianDigits	: String	{ return month < 10 ? "۰\(month.ps.stringWithPersianDigits)" : month.ps.stringWithPersianDigits }
 		
 		public var day							: Int		{ return dateComponents.day! }
-		public var day_d_withPersianDigits		: String	{ return day.PS_stringWithPersianDigits }
-		public var day_dd_withPersianDigits		: String	{ return day < 10 ? "۰\(day.PS_stringWithPersianDigits)" : day.PS_stringWithPersianDigits }
+		public var day_d_withPersianDigits		: String	{ return day.ps.stringWithPersianDigits }
+		public var day_dd_withPersianDigits		: String	{ return day < 10 ? "۰\(day.ps.stringWithPersianDigits)" : day.ps.stringWithPersianDigits }
 		
 		public var weekday						: Int		{ return dateComponents.weekday! }
 		public var weekdayName					: String	{ return PersianDate.WeekdaySymbols[dateComponents.weekday! - 1] }
 		
 		public var hour							: Int		{ return dateComponents.hour! }
-		public var hour_withPersianDigits		: String	{ return hour < 10 ? "۰\(hour.PS_stringWithPersianDigits)" : hour.PS_stringWithPersianDigits }
+		public var hour_withPersianDigits		: String	{ return hour < 10 ? "۰\(hour.ps.stringWithPersianDigits)" : hour.ps.stringWithPersianDigits }
 		
 		public var minute						: Int		{ return dateComponents.minute! }
-		public var minute_withPersianDigits		: String	{ return minute < 10 ? "۰\(minute.PS_stringWithPersianDigits)" : minute.PS_stringWithPersianDigits }
+		public var minute_withPersianDigits		: String	{ return minute < 10 ? "۰\(minute.ps.stringWithPersianDigits)" : minute.ps.stringWithPersianDigits }
 		
 		public var second						: Int		{ return dateComponents.second! }
-		public var second_withPersianDigits		: String	{ return second < 10 ? "۰\(second.PS_stringWithPersianDigits)" : second.PS_stringWithPersianDigits }
+		public var second_withPersianDigits		: String	{ return second < 10 ? "۰\(second.ps.stringWithPersianDigits)" : second.ps.stringWithPersianDigits }
 		
 		public var output: String {
 			let translatedFormat = outputFormat.rawValue
@@ -196,7 +239,7 @@ public class PersianSwift {
 			dateFormatter.monthSymbols = PersianDate.MonthSymbols
 			dateFormatter.calendar = Calendar(identifier: .persian)
 			
-			return dateFormatter.string(from: dateObject).PS_withPersianDigits
+			return dateFormatter.string(from: dateObject).ps.withPersianDigits
 		}
 		
 		public init?(from string: String, inputFormat iF: String, outputFormat oF: OutputFormat) {

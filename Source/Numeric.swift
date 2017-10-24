@@ -8,24 +8,56 @@
 
 import Foundation
 
-public protocol Numeric {}
+extension Int		: PersianSwiftCompatible {}
+extension Double	: PersianSwiftCompatible {}
+extension Float		: PersianSwiftCompatible {}
 
-extension Int		: Numeric {}
-extension Double	: Numeric {}
-extension Float		: Numeric {}
-
-public extension Numeric {
+public extension PersianSwiftHelper where Base == Int {
 	
-	var PS_string: String {
-		return String(describing: self)
+	var string: String {
+		return String(describing: self.base)
 	}
 	
-	var PS_stringWithPersianDigits: String {
-		return String(describing: self).PS_withPersianDigits
+	var stringWithPersianDigits: String {
+		return String(describing: self.base).ps.withPersianDigits
 	}
 	
-	var PS_stringWithCurrencyStyle: String {
-		return String(describing: self).PS_withCurrencyStyle!
+	var stringWithCurrencyStyle: String {
+		return String(describing: self.base).ps.withCurrencyStyle!
 	}
 	
 }
+
+public extension PersianSwiftHelper where Base == Double {
+	
+	var string: String {
+		return String(describing: self.base)
+	}
+	
+	var stringWithPersianDigits: String {
+		return String(describing: self.base).ps.withPersianDigits
+	}
+	
+	var stringWithCurrencyStyle: String {
+		return String(describing: self.base).ps.withCurrencyStyle!
+	}
+	
+}
+
+public extension PersianSwiftHelper where Base == Float {
+	
+	var string: String {
+		return String(describing: self.base)
+	}
+	
+	var stringWithPersianDigits: String {
+		return String(describing: self.base).ps.withPersianDigits
+	}
+	
+	var stringWithCurrencyStyle: String {
+		return String(describing: self.base).ps.withCurrencyStyle!
+	}
+	
+}
+
+

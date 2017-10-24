@@ -8,14 +8,16 @@
 
 import Foundation
 
-public extension Date {
+extension Date : PersianSwiftCompatible {}
+
+public extension PersianSwiftHelper where Base == Date {
 	
-	var PS_asPersianDate: String {
-		return PersianSwift.PersianDate(from: self).output
+	var asPersianDate: String {
+		return PersianSwift.PersianDate(from: self.base).output
 	}
 	
-	var PS_asFullPersianDateTime: String {
-		return PersianSwift.PersianDate(from: self, outputFormat: .ultraLongDateAndTime).output
+	var asFullPersianDateTime: String {
+		return PersianSwift.PersianDate(from: self.base, outputFormat: .ultraLongDateAndTime).output
 	}
 	
 }
