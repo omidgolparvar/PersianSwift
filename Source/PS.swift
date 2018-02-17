@@ -34,7 +34,7 @@ public class PersianSwift {
 			let input = PersianString.StringWithEasternDigits(from: string)
 			do {
 				let regex = try NSRegularExpression(pattern: "(0|\\+98)?([ ]|-|[()]){0,2}9([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){9}", options: .caseInsensitive)
-				return regex.firstMatch(in: input, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, input.characters.count)) != nil
+				return regex.firstMatch(in: input, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, input.count)) != nil
 			} catch {
 				return false
 			}
@@ -192,8 +192,8 @@ public class PersianSwift {
 		static let WeekdaySymbols	= ["یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنج‌شنبه", "جمعه", "شنبه"]
 		static let MonthSymbols		= ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"]
 		
-		static let DefaultInputFormat	= "yyyy-MM-dd HH:mm:ss"
-		static let DefaultOutputFormat	= OutputFormat.longDate
+		public static let DefaultInputFormat	= "yyyy-MM-dd HH:mm:ss"
+		public static let DefaultOutputFormat	= OutputFormat.longDate
 		
 		var input: String					= ""
 		var inputFormat: String				= PersianDate.DefaultInputFormat
