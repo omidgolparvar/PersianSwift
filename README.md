@@ -31,7 +31,8 @@ let persianString = int.PS_stringWithPersianDigits // ۱۲۳۴۵
 </div>
 
 ```bash
-pod 'PersianSwift'
+pod 'PersianSwift', '~> 1.5' // Swift 3.0
+pod 'PersianSwift', '~> 1.6' // Swift 4.0
 ```
 
 <div dir="rtl">
