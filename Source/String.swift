@@ -54,8 +54,8 @@ public extension PersianSwiftHelper where Base == String {
 		self.base = self.base.ps.withFixedPersianCharacters
 	}
 	
-	func asPersianDate(fromGregorianFormat iF: String = PersianSwift.PersianDate.DefaultInputFormat) -> String? {
-		return PersianSwift.PersianDate(from: self.base, inputFormat: iF)?.output
+	func asPersianDate(fromGregorianFormat inputFormat: String = PersianSwift.PersianDate.DefaultInputFormat) -> String? {
+		return PersianSwift.PersianDate(from: self.base, inputFormat: inputFormat)?.getDateString()
 	}
 	
 }

@@ -41,70 +41,72 @@ public class PersianSwift {
 		}
 		
 		static func StringWithPersianDigits(from string: String) -> String {
-			var returnString: String = string
-			returnString = returnString.replacingOccurrences(of: "0", with: "۰")
-			returnString = returnString.replacingOccurrences(of: "1", with: "۱")
-			returnString = returnString.replacingOccurrences(of: "2", with: "۲")
-			returnString = returnString.replacingOccurrences(of: "3", with: "۳")
-			returnString = returnString.replacingOccurrences(of: "4", with: "۴")
-			returnString = returnString.replacingOccurrences(of: "5", with: "۵")
-			returnString = returnString.replacingOccurrences(of: "6", with: "۶")
-			returnString = returnString.replacingOccurrences(of: "7", with: "۷")
-			returnString = returnString.replacingOccurrences(of: "8", with: "۸")
-			returnString = returnString.replacingOccurrences(of: "9", with: "۹")
-			
-			returnString = returnString.replacingOccurrences(of: ",", with: "،")
-			
-			returnString = returnString.replacingOccurrences(of: "٠", with: "۰")
-			returnString = returnString.replacingOccurrences(of: "١", with: "۱")
-			returnString = returnString.replacingOccurrences(of: "٢", with: "۲")
-			returnString = returnString.replacingOccurrences(of: "٣", with: "۳")
-			returnString = returnString.replacingOccurrences(of: "٤", with: "۴")
-			returnString = returnString.replacingOccurrences(of: "٥", with: "۵")
-			returnString = returnString.replacingOccurrences(of: "٦", with: "۶")
-			returnString = returnString.replacingOccurrences(of: "٧", with: "۷")
-			returnString = returnString.replacingOccurrences(of: "٨", with: "۸")
-			returnString = returnString.replacingOccurrences(of: "٩", with: "۹")
+			let returnString = string
+				//Replace English Numbers
+				.replacingOccurrences(of: "0", with: "۰")
+				.replacingOccurrences(of: "1", with: "۱")
+				.replacingOccurrences(of: "2", with: "۲")
+				.replacingOccurrences(of: "3", with: "۳")
+				.replacingOccurrences(of: "4", with: "۴")
+				.replacingOccurrences(of: "5", with: "۵")
+				.replacingOccurrences(of: "6", with: "۶")
+				.replacingOccurrences(of: "7", with: "۷")
+				.replacingOccurrences(of: "8", with: "۸")
+				.replacingOccurrences(of: "9", with: "۹")
+				//Replace Comma
+				.replacingOccurrences(of: ",", with: "،")
+				//Replace Arabic Numbers
+				.replacingOccurrences(of: "٠", with: "۰")
+				.replacingOccurrences(of: "١", with: "۱")
+				.replacingOccurrences(of: "٢", with: "۲")
+				.replacingOccurrences(of: "٣", with: "۳")
+				.replacingOccurrences(of: "٤", with: "۴")
+				.replacingOccurrences(of: "٥", with: "۵")
+				.replacingOccurrences(of: "٦", with: "۶")
+				.replacingOccurrences(of: "٧", with: "۷")
+				.replacingOccurrences(of: "٨", with: "۸")
+				.replacingOccurrences(of: "٩", with: "۹")
 			
 			return returnString
 		}
 		
 		static func StringWithEasternDigits(from string: String) -> String {
-			
-			var returnString: String = string
-			//Replace Persian Digits
-			returnString = returnString.replacingOccurrences(of: "۰", with: "0")
-			returnString = returnString.replacingOccurrences(of: "۱", with: "1")
-			returnString = returnString.replacingOccurrences(of: "۲", with: "2")
-			returnString = returnString.replacingOccurrences(of: "۳", with: "3")
-			returnString = returnString.replacingOccurrences(of: "۴", with: "4")
-			returnString = returnString.replacingOccurrences(of: "۵", with: "5")
-			returnString = returnString.replacingOccurrences(of: "۶", with: "6")
-			returnString = returnString.replacingOccurrences(of: "۷", with: "7")
-			returnString = returnString.replacingOccurrences(of: "۸", with: "8")
-			returnString = returnString.replacingOccurrences(of: "۹", with: "9")
-			//Replace Persian Comma
-			returnString = returnString.replacingOccurrences(of: "،", with: ",")
-			
-			//Replace Arabic Digits
-			returnString = returnString.replacingOccurrences(of: "٠", with: "0")
-			returnString = returnString.replacingOccurrences(of: "١", with: "1")
-			returnString = returnString.replacingOccurrences(of: "٢", with: "2")
-			returnString = returnString.replacingOccurrences(of: "٣", with: "3")
-			returnString = returnString.replacingOccurrences(of: "٤", with: "4")
-			returnString = returnString.replacingOccurrences(of: "٥", with: "5")
-			returnString = returnString.replacingOccurrences(of: "٦", with: "6")
-			returnString = returnString.replacingOccurrences(of: "٧", with: "7")
-			returnString = returnString.replacingOccurrences(of: "٨", with: "8")
-			returnString = returnString.replacingOccurrences(of: "٩", with: "9")
+			let returnString = string
+				//Replace Persian Digits
+				.replacingOccurrences(of: "۰", with: "0")
+				.replacingOccurrences(of: "۱", with: "1")
+				.replacingOccurrences(of: "۲", with: "2")
+				.replacingOccurrences(of: "۳", with: "3")
+				.replacingOccurrences(of: "۴", with: "4")
+				.replacingOccurrences(of: "۵", with: "5")
+				.replacingOccurrences(of: "۶", with: "6")
+				.replacingOccurrences(of: "۷", with: "7")
+				.replacingOccurrences(of: "۸", with: "8")
+				.replacingOccurrences(of: "۹", with: "9")
+				//Replace Persian Comma
+				.replacingOccurrences(of: "،", with: ",")
+				.replacingOccurrences(of: "٫", with: ".")
+				.replacingOccurrences(of: ",", with: "")
+				//Replace Arabic Digits
+				.replacingOccurrences(of: "٠", with: "0")
+				.replacingOccurrences(of: "١", with: "1")
+				.replacingOccurrences(of: "٢", with: "2")
+				.replacingOccurrences(of: "٣", with: "3")
+				.replacingOccurrences(of: "٤", with: "4")
+				.replacingOccurrences(of: "٥", with: "5")
+				.replacingOccurrences(of: "٦", with: "6")
+				.replacingOccurrences(of: "٧", with: "7")
+				.replacingOccurrences(of: "٨", with: "8")
+				.replacingOccurrences(of: "٩", with: "9")
 			
 			return returnString
 		}
 		
 		static func StringWithFixedPersianCharacters(from string: String) -> String {
-			var returnString: String = string
-			returnString = returnString.replacingOccurrences(of: "ي", with: "ی")
-			returnString = returnString.replacingOccurrences(of: "ك", with: "ک")
+			let returnString = string
+				.replacingOccurrences(of: "ي", with: "ی")
+				.replacingOccurrences(of: "ك", with: "ک")
+				.replacingOccurrences(of: "ى", with: "ی")
 			return returnString
 		}
 		
@@ -121,13 +123,14 @@ public class PersianSwift {
 		static func StringWithCurrencyStyle(from string: String) -> String? {
 			let formatter = NumberFormatter()
 			formatter.numberStyle = .decimal
+			formatter.locale = Locale(identifier: "fa_IR")
 			
 			guard
 				let double = Double(string),
 				let string = formatter.string(from: NSNumber(value: double))
 				else { return nil }
 			
-			return string.ps.withPersianDigits
+			return string
 		}
 		
 		static func SortedPersianStringArray(from array: [String], desc: Bool = false) -> [String] {
@@ -187,115 +190,85 @@ public class PersianSwift {
 		
 		static let PersianHour		= "ساعت"
 		static let PersianMonth		= "ماه"
-		static let AMSymbol			= "قبل از ظهر"
-		static let PMSymbol			= "بعد از ظهر"
-		static let WeekdaySymbols	= ["یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنج‌شنبه", "جمعه", "شنبه"]
-		static let MonthSymbols		= ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"]
 		
-		public static let DefaultInputFormat	= "yyyy-MM-dd HH:mm:ss"
-		public static let DefaultOutputFormat	= OutputFormat.longDate
+		public static var DefaultInputFormat	: String		= "yyyy-MM-dd HH:mm:ss"
+		public static var DefaultOutputFormat	: OutputFormat	= .longDate
 		
-		var input: String					= ""
-		var inputFormat: String				= PersianDate.DefaultInputFormat
-		var outputFormat: OutputFormat		= PersianDate.DefaultOutputFormat
+		var inputString		: String			= ""
+		var inputFormat		: String			= PersianDate.DefaultInputFormat
 		
-		var dateObject: Date				= Date()
-		var dateComponents: DateComponents	= DateComponents()
+		var dateObject		: Date				= Date()
+		var dateComponents	: DateComponents	= DateComponents()
+		var dateFormatter	: DateFormatter		= DateFormatter()
 		
-		public var year							: Int		{ return dateComponents.year! }
-		public var year_yyyy_withPersianDigits	: String	{ return year.ps.stringWithPersianDigits }
-		
-		public var month						: Int		{ return dateComponents.month! }
-		public var monthName					: String	{ return PersianDate.MonthSymbols[dateComponents.month!] }
-		public var month_m_withPersianDigits	: String	{ return month.ps.stringWithPersianDigits }
-		public var month_mm_withPersianDigits	: String	{ return month < 10 ? "۰\(month.ps.stringWithPersianDigits)" : month.ps.stringWithPersianDigits }
-		
-		public var day							: Int		{ return dateComponents.day! }
-		public var day_d_withPersianDigits		: String	{ return day.ps.stringWithPersianDigits }
-		public var day_dd_withPersianDigits		: String	{ return day < 10 ? "۰\(day.ps.stringWithPersianDigits)" : day.ps.stringWithPersianDigits }
-		
-		public var weekday						: Int		{ return dateComponents.weekday! }
-		public var weekdayName					: String	{ return PersianDate.WeekdaySymbols[dateComponents.weekday! - 1] }
-		
-		public var hour							: Int		{ return dateComponents.hour! }
-		public var hour_withPersianDigits		: String	{ return hour < 10 ? "۰\(hour.ps.stringWithPersianDigits)" : hour.ps.stringWithPersianDigits }
-		
-		public var minute						: Int		{ return dateComponents.minute! }
-		public var minute_withPersianDigits		: String	{ return minute < 10 ? "۰\(minute.ps.stringWithPersianDigits)" : minute.ps.stringWithPersianDigits }
-		
-		public var second						: Int		{ return dateComponents.second! }
-		public var second_withPersianDigits		: String	{ return second < 10 ? "۰\(second.ps.stringWithPersianDigits)" : second.ps.stringWithPersianDigits }
-		
-		public var output: String {
-			let translatedFormat = outputFormat.rawValue
-				.replacingOccurrences(of: "*Saat*", with: PersianDate.PersianHour)
-				.replacingOccurrences(of: "*Maah*", with: PersianDate.PersianMonth)
-			
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = translatedFormat
-			dateFormatter.amSymbol = PersianDate.AMSymbol
-			dateFormatter.pmSymbol = PersianDate.PMSymbol
-			dateFormatter.weekdaySymbols = PersianDate.WeekdaySymbols
-			dateFormatter.monthSymbols = PersianDate.MonthSymbols
+		public init?(from string: String, inputFormat: String = PersianDate.DefaultInputFormat) {
 			dateFormatter.calendar = Calendar(identifier: .persian)
+			dateFormatter.locale = Locale(identifier: "fa_IR")
 			
-			return dateFormatter.string(from: dateObject).ps.withPersianDigits
-		}
-		
-		public init?(from string: String, inputFormat iF: String, outputFormat oF: OutputFormat) {
-			input = string
-			inputFormat = iF
-			outputFormat = oF
+			self.inputString = string
+			self.inputFormat = inputFormat
 			
-			guard let c = createDateComponents() else { return nil }
-			
-			dateComponents = c
+			guard let dateComponents = createDateComponents(from: string) else { return nil }
+			self.dateComponents = dateComponents
 		}
 		
-		public convenience init?(from i: String) {
-			self.init(from: i, inputFormat: PersianDate.DefaultInputFormat, outputFormat: PersianDate.DefaultOutputFormat)
-		}
-		
-		public convenience init?(from i: String, inputFormat iF: String) {
-			self.init(from: i, inputFormat: iF, outputFormat: PersianDate.DefaultOutputFormat)
-		}
-		
-		
-		
-		public init(from date: Date, outputFormat oF: OutputFormat = PersianDate.DefaultOutputFormat) {
+		public init(from date: Date) {
+			dateFormatter.calendar = Calendar(identifier: .persian)
+			dateFormatter.locale = Locale(identifier: "fa_IR")
 			dateObject = date
-			outputFormat = oF
 			dateComponents = createDateComponents(from: date)
 		}
 		
+		public func getDateString(with outputFormat: OutputFormat = PersianDate.DefaultOutputFormat) -> String {
+			let dateFormat = outputFormat.format
+				.replacingOccurrences(of: "*Saat*", with: PersianDate.PersianHour)
+				.replacingOccurrences(of: "*Maah*", with: PersianDate.PersianMonth)
+			dateFormatter.dateFormat = dateFormat
+			return dateFormatter.string(from: dateObject).ps.withPersianDigits
+		}
 		
-		private func createDateComponents() -> DateComponents? {
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = inputFormat
+		private func createDateComponents(from inputString: String) -> DateComponents? {
+			self.dateFormatter.dateFormat = inputFormat
 			
-			guard let date = dateFormatter.date(from: input) else { return nil }
+			guard let date = dateFormatter.date(from: inputString) else { return nil }
 			
 			dateObject = date
 			return createDateComponents(from: date)
 		}
 		
 		private func createDateComponents(from date: Date) -> DateComponents {
-			return Calendar(identifier: Calendar.Identifier.persian)
-				.dateComponents([.year, .month, .day, .hour, .minute, .second, .weekday], from: date)
+			return Calendar(identifier: .persian).dateComponents([.year, .month, .day, .hour, .minute, .second, .weekday], from: date)
 		}
 		
-		
-		public enum OutputFormat: String {
-			case ultraLongDateAndTime	= "eeee d MMMM *Maah* yyyy *Saat* hh:mm:ss a"
-			case longDateTime			= "eeee d MMMM yyyy *Saat* hh:mm:ss a"
-			case longDate				= "eeee d MMMM yyyy"
-			case mediumDate				= "d MMMM yyyy"
-			case shortDate				= "yyyy/MM/d"
-			case ultraShortDate			= "yy/MM/dd"
+		public enum OutputFormat {
+			case ultraLongDateAndTime
+			case longDateTime
+			case longDate
+			case mediumDate
+			case shortDate
+			case ultraShortDate
 			
-			case longTime				= "*Saat* hh:mm:ss a"
-			case mediumTime				= "hh:mm:ss"
-			case shortTime				= "hh:mm"
+			case longTime
+			case mediumTime
+			case shortTime
+			
+			case custom(format: String)
+			
+			var format: String {
+				switch self {
+				case .ultraLongDateAndTime	: return "eeee d MMMM *Maah* yyyy *Saat* hh:mm:ss a"
+				case .longDateTime			: return "eeee d MMMM yyyy *Saat* hh:mm:ss a"
+				case .longDate				: return "eeee d MMMM yyyy"
+				case .mediumDate				: return "d MMMM yyyy"
+				case .shortDate				: return "yyyy/MM/d"
+				case .ultraShortDate			: return "yy/MM/dd"
+				case .longTime				: return "*Saat* hh:mm:ss a"
+				case .mediumTime				: return "hh:mm:ss"
+				case .shortTime				: return "hh:mm"
+				case .custom(let format)	: return format
+				}
+				
+			}
 		}
 		
 		

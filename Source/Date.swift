@@ -13,11 +13,15 @@ extension Date : PersianSwiftCompatible {}
 public extension PersianSwiftHelper where Base == Date {
 	
 	var asPersianDate: String {
-		return PersianSwift.PersianDate(from: self.base).output
+		return PersianSwift.PersianDate(from: self.base).getDateString()
 	}
 	
 	var asFullPersianDateTime: String {
-		return PersianSwift.PersianDate(from: self.base, outputFormat: .ultraLongDateAndTime).output
+		return PersianSwift.PersianDate(from: self.base).getDateString(with: .ultraLongDateAndTime)
+	}
+	
+	func getPersianDateString(with format: String) -> String {
+		return PersianSwift.PersianDate(from: self.base).getDateString(with: .custom(format: format))
 	}
 	
 }
