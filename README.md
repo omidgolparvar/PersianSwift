@@ -53,7 +53,7 @@ import PersianSwift
 <h3 dir='rtl'>متون یا همون <code>String</code></h3>
 
 <p dir="rtl">
-  <ul><li>چک کردن اینکه متن مورد نظر شماره تلفن موبایل باشه</li></ul>
+  <ul dir="rtl"><li>چک کردن اینکه متن مورد نظر شماره تلفن موبایل باشه</li></ul>
 </p>
 
 ```swift
@@ -61,7 +61,7 @@ String.ps.isPersianPhoneNumber -> Bool
 ```
 
 <p dir="rtl">
-  <ul><li>تبدیل شده متن موجود، بهمراه تبدیل اعداد از به فارسی و یا لاتین</li></ul>
+  <ul dir="rtl"><li>تبدیل شده متن موجود، بهمراه تبدیل اعداد از به فارسی و یا لاتین</li></ul>
 </p>
 
 ```swift
@@ -73,7 +73,7 @@ String.ps.toEnglishDigits() -> Void
 ```
 
 <p dir="rtl">
-  <ul><li>تبدیل کاراکترهای خاص در متن فارسی (حروف ک عربی و ی عربی)</li></ul>
+  <ul dir="rtl"><li>تبدیل کاراکترهای خاص در متن فارسی (حروف ک عربی و ی عربی)</li></ul>
 </p>
 
 ```swift
@@ -82,7 +82,7 @@ String.ps.fixPersianCharacters() -> Void
 ```
 
 <p dir="rtl">
-  <ul><li>
+  <ul dir="rtl"><li>
     تبدیل شده متن موجود، بهمراه ظاهر قیمت
     <p>اگه متن ما ساختار عددی مثل "12345" نداشته باشه، خروجی nil میشه.</p>
   </li></ul>
@@ -96,7 +96,7 @@ String.ps.withCurrencyStyle -> String?
 ```
 
 <p dir="rtl">
-  <ul><li>
+  <ul dir="rtl"><li>
     تبدیل متن با ساختار تاریخ، به تاریخ شمسی متناظر با اون
     <p>
     اگه متن ما ساختار تاریخ مثل "2017-06-03 17:23:41" رو نداشته باشه، خروجی `nil` میشه. البته فرمت ورودی رو میتونین موقع استفاده از این متد تنظیم کنین.
@@ -130,7 +130,7 @@ extension Float  : Numeric {}
 </p>
 
 <p dir="rtl">
-  <ul><li>دریافت عدد بصورت متن</li></ul>
+  <ul dir="rtl"><li>دریافت عدد بصورت متن</li></ul>
 </p>
 
 
@@ -140,7 +140,7 @@ Numeric.ps.string -> String
 
 
 <p dir="rtl">
-  <ul><li>دریافت عدد بصورت متن بهمراه اعداد فارسی</li></ul>
+  <ul dir="rtl"><li>دریافت عدد بصورت متن بهمراه اعداد فارسی</li></ul>
 </p>
 
 ```swift
@@ -148,7 +148,7 @@ Numeric.ps.stringWithPersianDigits -> String
 ```
 
 <p dir="rtl">
-  <ul><li>دریافت عدد بصورت متن و با ظاهر قیمت</li></ul>
+  <ul dir="rtl"><li>دریافت عدد بصورت متن و با ظاهر قیمت</li></ul>
 </p>
 
 ```swift
@@ -180,7 +180,7 @@ _ = date.ps.asFullPersianDateTime // شنبه ۱۸ آذر ماه ۱۳۶۸ ساع
 <h3 dir="rtl">آرایه‌های متنی یا همون [String]</h3>
 
 <p dir="rtl">
-  <ul>
+  <ul dir="rtl">
     <li>
       به ترتیب کردن آرایه‌ای از Stringها و دریافت خروجی
       <p>
@@ -196,7 +196,7 @@ _ = date.ps.asFullPersianDateTime // شنبه ۱۸ آذر ماه ۱۳۶۸ ساع
 ```
 
 <p dir="rtl">
-  <ul>
+  <ul dir="rtl">
     <li>
       به ترتیب کردن درجای آرایه‌ای از Stringها
       <p>
