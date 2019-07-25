@@ -8,6 +8,17 @@
 
 import Foundation
 
+extension String {
+	
+	internal func stringByReplacingFirstOccurrenceOfString(target: String, withString replaceString: String) -> String {
+		if let range = self.range(of: target) {
+			return self.replacingCharacters(in: range, with: replaceString)
+		}
+		return self
+	}
+	
+}
+
 extension String: PersianSwiftCompatible {}
 
 
@@ -58,6 +69,26 @@ public extension PersianSwiftHelper where Base == String {
 		return PersianSwift.PersianDate(from: self.base, inputFormat: inputFormat)?.getDateString()
 	}
 	
+	mutating func removeIranCountryCode() {
+		if self.base.hasPrefix("+989") {
+			self.base = self.base.stringByReplacingFirstOccurrenceOfString(target: "+989", withString: "09")
+		} else if self.base.hasPrefix("00989") {
+			self.base = self.base.stringByReplacingFirstOccurrenceOfString(target: "00989", withString: "09")
+		} else if self.base.hasPrefix("989") {
+			self.base = self.base.stringByReplacingFirstOccurrenceOfString(target: "989", withString: "09")
+		}
+	}
+	
+	func removedIranCountryCode() -> String {
+		if self.base.hasPrefix("+989") {
+			return self.base.stringByReplacingFirstOccurrenceOfString(target: "+989", withString: "09")
+		} else if self.base.hasPrefix("00989") {
+			return self.base.stringByReplacingFirstOccurrenceOfString(target: "00989", withString: "09")
+		} else if self.base.hasPrefix("989") {
+			return self.base.stringByReplacingFirstOccurrenceOfString(target: "989", withString: "09")
+		}
+		return self.base
+	}
 }
 
 
